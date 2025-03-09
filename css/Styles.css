@@ -1,0 +1,224 @@
+html,
+body {
+  height: 100%; /* Asegura que el html y body ocupen todo el alto de la ventana del navegador */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Oculta el desbordamiento horizontal */
+}
+
+body {
+  background-image: url("../media/images/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Mantiene el fondo fijo mientras se desplaza */
+}
+
+#card-container {
+  max-height: calc(
+    100vh - 150px
+  ); /* Ajusta el 150px según otros elementos en tu página */
+  overflow-y: auto; /* Permite el desplazamiento vertical si el contenido excede el máximo de altura */
+  width: 100%; /* Asegura que el contenedor use todo el ancho disponible */
+  padding: 10px; /* Opcional: agrega padding para evitar que el contenido toque los bordes */
+  box-sizing: border-box; /* Asegura que el padding no afecte el cálculo del ancho */
+}
+
+.nav {
+  background-color: rgba(217, 217, 217, 0.5); /* Gris con transparencia */
+  display: flex; /* Usa flexbox para alinear los elementos */
+  height: 70px; /* Altura del contenedor */
+  width: 100%; /* Ancho del contenedor */
+  margin: 0; /* Asegura que no haya márgenes externos */
+  padding: 0; /* Elimina cualquier padding interno que pueda afectar */
+}
+
+.nav > div {
+  display: flex; /* Establece un layout flexible para los elementos internos */
+  align-items: center; /* Alinea los elementos internamente en el centro */
+}
+
+.container-fluid {
+  width: 100%; /* Asegura que ocupe todo el ancho */
+  padding-right: 0;
+  padding-left: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.logo {
+  margin-left: 20px; /* Espacio entre el logo y el texto */
+  margin-right: 20px;
+}
+
+h1 {
+  margin: 0; /* Elimina los márgenes predeterminados de h1 para evitar espacios extra */
+  color: #193639; /* Color del texto */
+  font-size: 30pt; /* Tamaño del texto */
+  font-family: "Inter Extra Bold";
+  font-weight: bolder;
+}
+
+/* Ajustes para el estado normal del botón */
+.add {
+  margin-left: 30px;
+  background-color: transparent;
+  border-color: transparent;
+  border: none;
+}
+
+/* Ajustes para cuando el ratón pasa sobre el botón */
+.add:hover {
+  cursor: pointer;
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+/* Ajustes para cuando el botón está enfocado o activo */
+.add:focus,
+.add:active,
+.add.active {
+  cursor: pointer;
+  background-color: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none;
+  outline: none;
+}
+
+/* Ajustes para la imagen dentro del botón */
+.add > img {
+  height: auto; /* Aumentado de 56px a 70px */
+  width: 90px; /* Aumentado de 70px a 90px */
+}
+
+.clear {
+  margin-left: 30px;
+  background-color: transparent;
+  border-color: transparent;
+  border: none;
+}
+
+/* Ajustes para cuando el ratón pasa sobre el botón */
+.clear:hover {
+  cursor: pointer;
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+/* Ajustes para cuando el botón está enfocado o activo */
+.clear:focus,
+.clear:active,
+.clear.active {
+  cursor: pointer;
+  background-color: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none;
+  outline: none;
+}
+
+/* Ajustes para la imagen dentro del botón */
+.clear > img {
+  height: auto; /* Aumentado de 56px a 70px */
+  width: 80px; /* Aumentado de 70px a 90px */
+}
+
+/* Estilos para el estado normal y enfocado del input */
+input.loc {
+  background-color: rgba(217, 217, 217, 0.5); /* Gris con transparencia */
+  font-family: "Inter", sans-serif; /* Asegúrate de que la fuente Inter está disponible */
+  font-weight: bolder;
+  font-size: 20pt;
+  border: 1px solid #000000; /* Color de borde */
+  color: #000000; /* Color del texto */
+}
+
+/* Asegurando que los estilos se mantengan al enfocar */
+input.loc:focus {
+  background-color: rgba(
+    217,
+    217,
+    217,
+    0.5
+  ); /* Mantener el mismo color de fondo al enfocar */
+  border-color: #000000; /* Mantener el color de borde */
+  box-shadow: 0 0 20px 0 rgba(242, 208, 119, 0.75); /* Box-shadow gris */
+}
+
+.lock > div {
+  margin-top: 150px;
+}
+
+/* Estilo general de las tarjetas */
+.card-custom {
+  background-color: rgba(217, 217, 217, 0.4); /* Color de fondo de la tarjeta */
+  box-shadow: 0 0 20px 0 rgba(242, 208, 119, 0.75); /* Sombra sutil para la tarjeta */
+  height: 462px;
+  width: 319px;
+}
+
+/* Estilo del cuerpo de la tarjeta */
+.card-body-custom {
+  padding: 40px; /* Padding interior para el contenido de la tarjeta */
+  color: #000000; /* Color del texto */
+}
+
+/* Estilo de los títulos dentro de la tarjeta */
+.card-title-custom {
+  font-size: 20pt; /* Tamaño del texto para el título */
+  font-weight: bold; /* Negrita para el título */
+  margin-bottom: 20px; /* Margen inferior para separar del texto */
+  margin-top: 20px;
+  font-family: "Inter";
+}
+
+/* Estilo del texto dentro de la tarjeta */
+.card-text-custom {
+  font-size: 20pt; /* Tamaño de fuente para el texto */
+  margin-bottom: 40px; /* Margen inferior para separar los textos */
+  color: #000000; /* Color del texto */
+  font-weight: bolder;
+  font-family: "Inter";
+}
+
+/* Estilo de la imagen en la tarjeta */
+.card-img-top-custom {
+  width: 132px; /* Ancho completo para adaptarse al contenedor */
+  height: 121px; /* Altura automática para mantener la proporción */
+  border-top-left-radius: 8px; /* Redondeo de esquina superior izquierda */
+  border-top-right-radius: 8px; /* Redondeo de esquina superior derecha */
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-custom {
+  animation: fadeInUp 0.5s ease-out; /* Aplica la animación con una duración de 0.5 segundos */
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+.card-custom {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.card-custom.fadeOut {
+  animation: fadeOutDown 0.5s ease-out forwards; /* 'forwards' mantiene el estado final de la animación */
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/Styles.css" />
+  </head>
+  <body>
+    <!--Header-->
+    <div class="container-fluid">
+      <div class="nav row align-items-center">
+        <div class="col">
+          <div class="d-flex align-items-center">
+            <img
+              src="media/images/cloudy-logo.png"
+              alt="logo"
+              class="logo img-fluid"
+            />
+            <h1 class="mb-0">Weather App</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Weather input-->
+    <div class="container-fluid">
+      <div class="lock row justify-content-center">
+        <div class="col-lg-6 col-md-4 col-12">
+          <!-- Ajusta para pantallas grandes y pequeñas -->
+          <div class="d-flex flex-column flex-md-row align-items-center gap-2">
+            <!-- flex-column en móviles -->
+            <input
+              type="text"
+              class="loc form-control flex-grow-1"
+              placeholder="Enter the location"
+              aria-label="Location"
+            />
+            <button class="add btn btn-success" type="button">
+              <img src="media/images/add.png" alt="Add" class="img-fluid" />
+            </button>
+            <!-- Botón para limpiar las tarjetas -->
+            <button class="clear btn btn-danger" type="button">
+              <img src="media/images/trash.png" alt="Clear" class="img-fluid" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--dinamic cards-->
+    <div id="card-container" class="row justify-content-center"></div>
+
+    <script src="src/script.js"></script>
+  </body>
+</html>
