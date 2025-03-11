@@ -12,7 +12,7 @@ document.querySelector(".add").addEventListener("click", function () {
   // Crear tarjeta
   const card = document.createElement("div");
   card.className =
-    "col-md-4 mb-4 d-flex align-items-center justify-content-center";
+    "parentX col-md-4 mb-4 d-flex align-items-center justify-content-center";
   card.innerHTML = `
       <div class="card card-custom align-items-center justify-content-center">
         <h5 class="card-title card-title-custom">${location}</h5>
@@ -38,16 +38,36 @@ document.querySelector(".add").addEventListener("click", function () {
 
 document.querySelector(".clear").addEventListener("click", function () {
   const cards = document.querySelectorAll(".card-custom");
-  cards.forEach((card, index) => {
-    setTimeout(() => {
-      card.classList.add("fadeOut");
+  if (cards.length > 0) {
+    cards.forEach((card, index) => {
+      setTimeout(() => {
+        card.classList.add("fadeOut");
 
-      card.addEventListener("animationend", () => {
-        card.remove();
-        if (index === cards.length - 1) {
-          console.log("Última tarjeta eliminada");
-        }
-      });
-    }, index * 100);
-  });
+        card.addEventListener(
+          "animationend",
+          function handler() {
+            card.remove();
+            card.removeEventListener("animationend", handler);
+
+            // Verifica si el elemento removido era el último
+            if (index === cards.length - 1) {
+              console.log("Última tarjeta eliminada");
+              // Aquí elimina el elemento padre si es necesario, después de que todas las tarjetas hayan sido removidas
+              const parent = document.querySelector(".parentX");
+              if (parent) {
+                parent.remove();
+              }
+            }
+          },
+          { once: true }
+        );
+      }, index * 100);
+    });
+  } else {
+    // Si no hay tarjetas, simplemente elimina el elemento padre
+    const parent = document.querySelector(".parentX");
+    if (parent) {
+      parent.remove();
+    }
+  }
 });
