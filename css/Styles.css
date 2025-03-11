@@ -222,3 +222,56 @@ input.loc:focus {
 .card-custom.fadeOut {
   animation: fadeOutDown 0.5s ease-out forwards; /* 'forwards' mantiene el estado final de la animación */
 }
+
+
+/* Contenedor de las nubes */
+.clouds-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* No interfiere con otros elementos */
+  z-index: -1; /* Detrás del contenido */
+  overflow: hidden;
+}
+
+/* Estilo general de las nubes */
+.cloud {
+  position: absolute;
+  width: 150px;
+  opacity: 0.7;
+  animation: moveClouds 30s linear infinite;
+}
+
+/* Diferentes tamaños y posiciones iniciales */
+.cloud1 {
+  top: 10%;
+  left: -200px;
+  width: 120px;
+  animation-duration: 25s;
+}
+
+.cloud2 {
+  top: 40%;
+  left: -300px;
+  width: 180px;
+  animation-duration: 35s;
+}
+
+.cloud3 {
+  top: 70%;
+  left: -250px;
+  width: 140px;
+  animation-duration: 28s;
+}
+
+/* Animación para mover las nubes de izquierda a derecha */
+@keyframes moveClouds {
+  from {
+      transform: translateX(-100%);
+  }
+  to {
+      transform: translateX(100vw);
+  }
+}
