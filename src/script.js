@@ -69,7 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
               </div>
           </div>
       `;
-
       // Agregar la tarjeta al contenedor
       container.appendChild(card);
   }
@@ -96,12 +95,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 📌 Evento para limpiar todas las tarjetas
   clearButton.addEventListener("click", function () {
-      const cards = document.querySelectorAll(".card-custom");
-      cards.forEach((card, index) => {
-          setTimeout(() => {
-              card.classList.add("fadeOut");
-              card.addEventListener("animationend", () => card.remove());
-          }, index * 100);
-      });
-  });
+      container.innerHTML = ''; });
 });
